@@ -13,7 +13,7 @@ RUN GITHUB_TOKEN=${GITHUB_TOKEN} pip install -r requirements.txt
 COPY . .
 
 # 暴露 Flask 的端口
-EXPOSE 5000
+EXPOSE 10000
 
 # 启动 Flask 应用
 CMD gunicorn --bind 0.0.0.0:$PORT app:app

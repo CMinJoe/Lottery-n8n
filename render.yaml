@@ -30,8 +30,8 @@ services:
       - key: GITHUB_TOKEN
         sync: false
       - key: PORT
-        value: 5000
+        value: 10000
     plan: free
     autoDeploy: true
     healthCheckPath: /health
-    healthCheckPort: 5000
+    healthCheckPort: 10000
