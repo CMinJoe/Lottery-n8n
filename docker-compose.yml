@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - TAIPEI_TIMEZONE=Asia/Taipei
+      - TZ=Asia/Taipei
+      - WEBHOOK_URL=http://localhost:5678/
+      - N8N_CORS=http://localhost:5678/
+    volumes:
+      - ./n8n_data:/root/.n8n
+    networks:
+      - n8n_network
+
+  python_app:
+    build:
+      context: ./python-app  # 指定构建上下文为 python-app 目录
+      dockerfile: Dockerfile  # 使用 python-app 目录中的 Dockerfile
+    container_name: python_app
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./python-app:/python-app  # 将本地代码挂载到容器中以支持热加载
+    networks:
+      - n8n_network
+
+networks:
+  n8n_network:
+    driver: bridge
+
+volumes:
+  n8n_data:

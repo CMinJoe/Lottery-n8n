@@ -1,0 +1,34 @@
+services:
+  - name: n8n
+    type: web
+    env: docker
+    docker:
+      image: n8nio/n8n
+    envVars:
+      - key: TAIPEI_TIMEZONE
+        value: Asia/Taipei
+      - key: TZ
+        value: Asia/Taipei
+      - key: WEBHOOK_URL
+        value: http://localhost:5678/
+      - key: N8N_CORS
+        value: http://localhost:5678/
+    disk:
+      name: n8n_data
+      mountPath: /root/.n8n
+      sizeGB: 1
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+  
+  - name: python-app
+    type: web
+    env: docker
+    docker:
+      buildContext: ./python-app  
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_ENV
+        value: production
