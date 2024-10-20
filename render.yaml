@@ -29,6 +29,9 @@ services:
         value: production
       - key: GITHUB_TOKEN
         sync: false
+      - key: PORT
+        value: 5000
     plan: free
     autoDeploy: true
-    healthCheckPath: /
+    healthCheckPath: /health
+    healthCheckPort: 5000
