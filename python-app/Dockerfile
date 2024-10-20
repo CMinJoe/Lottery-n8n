@@ -7,9 +7,7 @@ WORKDIR /python-app
 COPY requirements.txt .
 
 ARG GITHUB_TOKEN
-RUN echo "machine github.com login $GITHUB_TOKEN" > ~/.netrc
-# 安装所需的 Python 套件
-RUN pip install -r requirements.txt
+RUN GITHUB_TOKEN=${GITHUB_TOKEN} pip install -r requirements.txt
 
 # 复制 python-app 文件夹的内容到容器的工作目录
 COPY . .
