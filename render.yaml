@@ -34,4 +34,3 @@ services:
     plan: free
     autoDeploy: true
     healthCheckPath: /health
-    healthCheckPort: 10000
