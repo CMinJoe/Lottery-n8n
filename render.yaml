@@ -1,9 +1,9 @@
 services:
-  - name: n8n
-    type: web
+  - type: web
+    name: n8n
     env: docker
-    docker:
-      image: n8nio/n8n
+    dockerfilePath: ./Dockerfile.n8n  # 假設您有一個專門用於 n8n 的 Dockerfile
+    dockerContext: .
     envVars:
       - key: TAIPEI_TIMEZONE
         value: Asia/Taipei
@@ -21,14 +21,11 @@ services:
     autoDeploy: true
     healthCheckPath: /
 
-  - name: python-app
-    type: web
+  - type: web
+    name: python-app
     env: docker
-    docker:
-      buildContext: ./python-app  
-      dockerfile: Dockerfile
-    ports:
-      - "5000:5000"
+    dockerfilePath: ./python-app/Dockerfile
+    dockerContext: ./python-app
     envVars:
       - key: PYTHON_ENV
         value: production
