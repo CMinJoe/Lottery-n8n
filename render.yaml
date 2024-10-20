@@ -2,7 +2,7 @@ services:
   - type: web
     name: n8n
     env: docker
-    dockerfilePath: ./Dockerfile.n8n  # 假設您有一個專門用於 n8n 的 Dockerfile
+    dockerfilePath: ./Dockerfile
     dockerContext: .
     envVars:
       - key: TAIPEI_TIMEZONE
@@ -10,9 +10,9 @@ services:
       - key: TZ
         value: Asia/Taipei
       - key: WEBHOOK_URL
-        value: https://lottery-n8n.onrender.com
+        value: https://n8n-1zhw.onrender.com
       - key: N8N_CORS
-        value: https://lottery-n8n.onrender.com
+        value: https://n8n-1zhw.onrender.com
     plan: free
     autoDeploy: true
     healthCheckPath: /
