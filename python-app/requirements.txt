@@ -3,3 +3,4 @@ MarkupSafe==2.0.1
 Werkzeug==1.0.1  
 git+https://${GITHUB_TOKEN}@github.com/CMinJoe/Lottery.git
 gunicorn
+line-bot-sdk
