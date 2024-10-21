@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
       "start": "n8n start",
-      "postinstall": "npm run build"
+      "postinstall": "npm install n8n -g"
     },
     "dependencies": {
       "n8n": "^0.209.0"
