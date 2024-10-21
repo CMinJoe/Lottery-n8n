@@ -10,9 +10,9 @@ services:
       - key: TZ
         value: Asia/Taipei
       - key: WEBHOOK_URL
-        fromEnv: WEBHOOK_URL
+        value: ${WEBHOOK_URL}
       - key: N8N_CORS
-        fromEnv: N8N_CORS
+        value: ${N8N_CORS
       - key: GITHUB_TOKEN
         sync: false
     plan: free
