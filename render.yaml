@@ -17,8 +17,6 @@ services:
         sync: false
       - key: DB_TYPE
         value: postgresdb
-      - key: DATABASE_URL
-        sync: false  # PostgreSQL URL
       - key: DB_POSTGRESDB_PASSWORD
         sync: false  # PostgreSQL 使用者密碼
       - key: DB_POSTGRESDB_HOST
