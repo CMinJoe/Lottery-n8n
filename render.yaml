@@ -15,6 +15,18 @@ services:
         sync: false
       - key: N8N_ENCRYPTION_KEY
         sync: false
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        sync: false # PostgreSQL 資料庫的主機地址
+      - key: DB_POSTGRESDB_PORT
+        value: "5432"  # 默認 PostgreSQL 端口
+      - key: DB_POSTGRESDB_DATABASE
+        sync: false  # PostgreSQL 資料庫名稱
+      - key: DB_POSTGRESDB_USER
+        sync: false # PostgreSQL 使用者
+      - key: DB_POSTGRESDB_PASSWORD
+        vsync: false  # PostgreSQL 使用者密碼
     plan: free
     autoDeploy: true
     healthCheckPath: /

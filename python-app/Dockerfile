@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 10000
 
 # 启动 Flask 应用
-CMD gunicorn --bind 0.0.0.0:$PORT app:app
+CMD gunicorn --bind 0.0.0.0:$PORT --log-level info app:app

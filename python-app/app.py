@@ -31,7 +31,7 @@ def linebot():
     body = request.get_data(as_text=True)                    # 取得收到的訊息內容
     try:
         json_data = json.loads(body)   
-        logging.info("test = %s",jsonify(json_data))                      # json 格式化訊息內容
+        logging.info("linebot text = %s",json.dumps(json_data))                      # json 格式化訊息內容
         access_token = 'DXqQKBJ5xagBiSZmY5Sk/or2SUAjPAMN+FKLSjEXMMzHbh/p/vaWxup/DTZH82ZZLq/q5qxwH6I/FJ9qibDMSD6Ji0Cit/8pYM1Znxfe9/aa7+4VWIz1nlXXFT3/PvOF8dSmxJW8sFyipioXgUONbQdB04t89/1O/w1cDnyilFU='
         secret = 'a33d564adac8b17cca55ab88522898ac'
         line_bot_api = LineBotApi(access_token)              # 確認 token 是否正確
