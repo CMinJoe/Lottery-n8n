@@ -4,13 +4,14 @@
     "description": "n8n project on Render",
     "main": "index.js",
     "scripts": {
-      "start": "n8n start",
-      "postinstall": "npm install n8n -g"
+        "start": "n8n start",
+        "postinstall": "npm install n8n -g"
     },
     "dependencies": {
-      "n8n": "^0.209.0"
+        "n8n": "1.62.6",
+        "next": "^13.4.0"
     },
     "engines": {
-      "node": ">=16.0.0"
+        "node": ">=16.0.0 <19.0.0"
     }
-  }
+}
