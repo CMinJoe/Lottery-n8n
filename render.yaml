@@ -17,6 +17,10 @@ services:
         sync: false
       - key: DB_TYPE
         value: postgresdb
+      - key: DATABASE_URL
+        vsync: false  # PostgreSQL URL
+      - key: DB_POSTGRESDB_PASSWORD
+        vsync: false  # PostgreSQL 使用者密碼
       - key: DB_POSTGRESDB_HOST
         sync: false # PostgreSQL 資料庫的主機地址
       - key: DB_POSTGRESDB_PORT
