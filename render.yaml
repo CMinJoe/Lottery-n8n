@@ -1,25 +1,5 @@
 services:
   - type: web
-    name: n8n
-    env: docker
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
-    envVars:
-      - key: TAIPEI_TIMEZONE
-        value: Asia/Taipei
-      - key: TZ
-        value: Asia/Taipei
-      - key: WEBHOOK_URL
-        value: https://n8n-1zhw.onrender.com
-      - key: N8N_CORS
-        value: https://n8n-1zhw.onrender.com
-      - key: GITHUB_TOKEN
-        sync: false
-    plan: free
-    autoDeploy: true
-    healthCheckPath: /
-
-  - type: web
     name: python-app
     env: docker
     dockerfilePath: ./python-app/Dockerfile
