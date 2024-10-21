@@ -10,10 +10,8 @@ services:
       - key: TZ
         value: Asia/Taipei
       - key: WEBHOOK_URL
-        value: ${WEBHOOK_URL}
+        sync: false
       - key: N8N_CORS
-        value: ${N8N_CORS
-      - key: GITHUB_TOKEN
         sync: false
     plan: free
     autoDeploy: true
