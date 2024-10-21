@@ -1,5 +1,25 @@
 services:
   - type: web
+    name: n8n
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: TAIPEI_TIMEZONE
+        value: Asia/Taipei
+      - key: TZ
+        value: Asia/Taipei
+      - key: WEBHOOK_URL
+        fromEnv: WEBHOOK_URL
+      - key: N8N_CORS
+        fromEnv: N8N_CORS
+      - key: GITHUB_TOKEN
+        sync: false
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+
+  - type: web
     name: python-app
     env: docker
     dockerfilePath: ./python-app/Dockerfile

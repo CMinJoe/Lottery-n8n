@@ -1,0 +1,16 @@
+{
+    "name": "Lottery-n8n",
+    "version": "1.0.0",
+    "description": "n8n project on Render",
+    "main": "index.js",
+    "scripts": {
+      "start": "n8n start",
+      "postinstall": "npm run build"
+    },
+    "dependencies": {
+      "n8n": "^0.209.0"
+    },
+    "engines": {
+      "node": ">=16.0.0"
+    }
+  }
