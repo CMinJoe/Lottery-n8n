@@ -65,17 +65,11 @@ def linebotSendMsg():
     req = json.loads(body);
     logging.info("Request Json = %s",json.dumps(req))                      # json 格式化訊息內容
     access_token = os.getenv('LINE_ACCESS_TOKEN');
-    secret = os.getenv('LINE_SECRET');
-    if not access_token or not secret:
-            logging.error("Missing LINE_ACCESS_TOKEN or LINE_SECRET environment variables")
-            return jsonify({
-                'error': 'Configuration error: Missing LINE credentials'
-            }), 500
-    
+    lineUserId = os.getenv('LINE_USER_ID')
     line_bot_api = LineBotApi(access_token)
     try:
         # 網址被執行時，等同使用 GET 方法發送 request，觸發 LINE Message API 的 push_message 方法
-        line_bot_api.push_message(secret, TextSendMessage(text=req['sendMsg']))
+        line_bot_api.push_message(lineUserId, TextSendMessage(text=req['sendMsg']))
         return 'OK'
     except:
         print('error')

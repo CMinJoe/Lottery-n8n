@@ -15,6 +15,8 @@ services:
         sync: false
       - key: LINE_ACCESS_TOKEN
         sync: false
+      - key: LINE_USER_ID
+        sync: false
     plan: free
     autoDeploy: true
     healthCheckPath: /health
